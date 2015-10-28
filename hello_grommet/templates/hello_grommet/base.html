@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<html lang="en">
+    <head>
+        <title>Hello Grommet</title>
+        <meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; utf-8">
+
+        <script src="{% static 'js/grommet.min.js' %}"></script>
+        <link  href="{% static 'css/grommet.min.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+		<header class="box box--direction-row box--justify-between box--align-center box--pad-horizontal-medium header header--large">
+			<div class="box box--direction-row box--align-center box--pad-none title title--responsive">
+				{% block header_title %}
+				{% endblock %}
+			</div>
+		</header>
+		
+		<section class="box box--direction-column box--responsive box--pad-horizontal-medium section">
+			<div class="tiles tiles--flush">
+				<div class="box box--direction-column box--align-start box--responsive box--pad-none tile">
+					{% block body_content %}
+					{% endblock body_content %}
+				</div>
+			</div>
+		</section>
+    </body>
+</html>
+
